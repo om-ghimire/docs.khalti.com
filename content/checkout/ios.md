@@ -58,7 +58,7 @@ pod 'KhaltiCheckout'
 
 #### Fetching `pidx`
 
-Please go through the <a target="_blank" href="https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request">Initiating a Payment request</a> to learn how to request the `pidx`
+Please go through the <a target="_blank" href="https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request">Initiating a Payment request</a> to learn how to request the `pidx`. The payment URL is returned by the initiate API along with the `pidx`.
 #### Setup
 
 > Note : `environment` has 2 options; `Environment.prod` & `Environment.Test`
@@ -68,7 +68,7 @@ Please go through the <a target="_blank" href="https://docs.khalti.com/khalti-ep
 Create an instance of `Khalti`, using `init` function, with the above `config` as parameter along with the callbacks `onPaymentResult`, `onMessage` and `onReturn`. Here, `onReturn` is optional and can be skipped.
 
 ```swift
-Khalti.init(config: KhaltiPayConfig(publicKey:"4aa1b684f4de4860968552558fc8487d", pIdx:"8mBsbuzGYDWveAZkMn4Q2F",environment:Environment.TEST), 
+Khalti.init(config: KhaltiPayConfig(publicKey:"4aa1b684f4de4860968552558fc8487d", pIdx:"8mBsbuzGYDWveAZkMn4Q2F",paymentUrl: "your_payment_url_here", environment:Environment.TEST), 
 onPaymentResult: {[weak self] (paymentResult,khalti) in
         
 

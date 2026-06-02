@@ -88,7 +88,7 @@ compileOptions {
 
 #### Fetching `pidx`
 
-Please go through the <a target="_blank" href="https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request">Initiating a Payment request</a> to learn how to request the `pidx`
+Please go through the <a target="_blank" href="https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request">Initiating a Payment request</a> to learn how to request the `pidx`. The payment URL is returned by the initiate API along with the `pidx`.
 #### Setup
 
 ##### Building Config
@@ -97,7 +97,8 @@ Create an instance of `KhaltiPayConfig` with `publicKey`, `pidx`,  `returnUrl`, 
 
 ```kotlin
 val config = KhaltiPayConfig(  
-	publicKey = "<your_public_key>",  
+	publicKey = "<your_public_key>", 
+    paymentUrl: "your_payment_url_here", 
 	pidx = "<your_pidx>",  
 	environment = Environment.TEST  
 )

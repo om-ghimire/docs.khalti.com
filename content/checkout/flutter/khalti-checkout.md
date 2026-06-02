@@ -82,7 +82,7 @@ No configuration is required for iOS.
 ## Launching Payment Interface
 
 ### Generating the pidx
-A unique product identifier `pidx` must be generated via a server side POST request before being able to proceed. Read [here](https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request) for information on how one can generate pidx along with other extra parameters.
+A unique product identifier `pidx` and the payment URL must be generated via a server-side POST request before being able to proceed. Read [here](https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request) for information on how one can generate `pidx`, the payment URL, and other extra parameters.
 
 ### Khalti Initialization
 Before being able to launch Khalti payment gateway, it is necessary to initialize `Khalti` object. The initialization can be done by a static `init()` method.
@@ -106,6 +106,7 @@ class _KhaltiSDKDemoState extends State<KhaltiSDKDemo> {
     final payConfig = KhaltiPayConfig(
       publicKey: '__live_public_key__', // Merchant's public key
       pidx: pidx, // This should be generated via a server side POST request.
+      paymentUrl:paymentUrl,
       environment: Environment.prod,
     );
 
